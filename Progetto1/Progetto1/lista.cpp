@@ -123,23 +123,16 @@ Nodo* Lista::Ricerca(int x) {
 	}
 }
 
-void Lista::Inverti() {
-	/*
-	Lista temp;
-	while (L != 0) {
-		temp.InserisciInTesta(L->getInfo());
-		L = L->getPunt();
+void Lista::Inverti(){
+	Nodo *next = L;
+	Nodo *prev = 0;
+	while (next != 0){
+		Nodo *tmp = next->getPunt();
+		next->setPunt(prev);
+		L = next;
+		prev = next;
+		next = tmp;
 	}
-	L = temp.L;*/
-	Nodo *a = L;
-	Nodo *b = L->getPunt();
-	Nodo *c = b->getPunt();
-	Nodo *aux = 0;
-	while (c != 0) {
-		a->setPunt(b);
-		b->setPunt(a);
-	}
-
 }
 	
 Lista::~Lista() {
