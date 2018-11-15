@@ -16,7 +16,9 @@ int main(){
 	cout << endl;
 	cin >> elemento;
 	miaLista.InserisciOrdinato(elemento);
-	miaLista.Inverti();
+	cout << endl;
+	miaLista.Visualizza();
+	miaLista.reverseList();
 	cout << endl;
 	miaLista.Visualizza();
 	cout << endl;
