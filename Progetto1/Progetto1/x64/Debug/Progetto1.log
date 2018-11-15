@@ -1,0 +1,7 @@
+﻿  lista.cpp
+  Generazione del codice in corso...
+c:\users\in4a13\downloads\progetto1\progetto1\lista.cpp(124): warning C4715: 'Lista::Ricerca': non tutti i percorsi di controllo restituiscono un valore
+  Omissione in corso... (nessuna modifica importante rilevata)
+  main.cpp
+  Progetto1.vcxproj -> C:\Users\in4a13\Downloads\Progetto1\x64\Debug\Progetto1.exe
+  Progetto1.vcxproj -> C:\Users\in4a13\Downloads\Progetto1\x64\Debug\Progetto1.pdb (Partial PDB)
