@@ -3,6 +3,7 @@
 
 class Lista {
 	friend Lista operator +(Lista &, Lista &); //mantieni ordine DA FARE
+	friend Lista Merge(const Lista &, const Lista &);
 private:
 	Nodo * L;
 public:
