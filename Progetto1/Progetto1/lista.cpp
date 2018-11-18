@@ -2,8 +2,36 @@
 #include<iostream>
 using namespace std;
 
-//Lista operator +(Lista &uno, Lista &due) {
-//}
+/*Lista operator +(Lista uno, Lista due) {
+	cout << "no";
+}*/
+
+//implementare stack con i puntatori e lista
+
+Lista Merge(const Lista & uno, const Lista & due) {
+	Lista tre;
+	Nodo *p1 = uno.L;
+	Nodo *p2 = due.L;
+	while (p1->getPunt() != 0 && p2->getPunt() != 0) {
+		if (p1->getInfo() >= p2->getInfo()) {
+			tre.InserisciInCoda(p2->getInfo());
+			p2 = p2->getPunt();
+		}
+		else {
+			tre.InserisciInCoda(p1->getInfo());
+			p1 = p1->getPunt();
+		}
+	}
+	while (p1 != 0) {
+		tre.InserisciInCoda(p1->getInfo());
+		p1 = p1->getPunt();
+	}
+	while (p2 != 0) {
+		tre.InserisciInCoda(p2->getInfo());
+		p2 = p2->getPunt();
+	}
+	return tre;
+}
 	
 Lista::Lista() {
 	L = 0; //se la lista è nuova, L non punta a niente.
