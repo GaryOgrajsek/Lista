@@ -152,12 +152,10 @@ Nodo* Lista::Ricerca(int x) {
 }
 
 void Lista::Inverti(){
-	Nodo *next = L;
-	Nodo *prev = 0;
-	Nodo *tmp= NULL;
-	while (next != 0){
-		tmp = next->getPunt();
-		next->setPunt(prev);
+	Nodo *q, *p, *r = 0
+	while (q != 0){
+		
+		->setPunt(r);
 		L = next;
 		prev = next;
 		next = tmp;
