@@ -92,6 +92,22 @@ void Lista::Visualizza() {
 	}
 }
 
+void Lista::VisualizzaNonOrdinato(){
+	Nodo *P=L;
+	while(Controlla(P)){
+		cout<<p->getInfo();
+		p = p->getPunt();
+	}
+}
+
+bool Lista::Controllo(Nodo* q){
+	Nodo* p=L;
+	while(p != q && p!=q->getPunt()){
+		p=p->getPunt();
+	}
+	return (p!=q->getPunt());
+}
+
 void Lista::Elimina(int x) {
 	Nodo *succ, *prec;
 	succ = L;
