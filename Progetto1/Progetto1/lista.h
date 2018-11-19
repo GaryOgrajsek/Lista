@@ -14,6 +14,7 @@ public:
 	void Modifica(int, int);
 	Nodo * Ricerca(int); //	ricerca un dato e restituisce il puntatore al nodo precedente quello che contiene il dato cercato
 	void Visualizza();
+	void VisualizzaNonOrdinato();
 	void Elimina(int);
 	void EliminaTesta();
 	void Inverti();
