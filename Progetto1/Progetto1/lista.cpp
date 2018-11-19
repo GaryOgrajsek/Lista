@@ -93,14 +93,14 @@ void Lista::Visualizza() {
 }
 
 void Lista::VisualizzaNonOrdinato(){
-	Nodo *P=L;
-	while(Controlla(P)){
+	Nodo *p=L;
+	while(Controlla(p)){
 		cout<<p->getInfo();
 		p = p->getPunt();
 	}
 }
 
-bool Lista::Controllo(Nodo* q){
+bool Lista::Controlla(Nodo* q){
 	Nodo* p=L;
 	while(p != q && p!=q->getPunt()){
 		p=p->getPunt();
@@ -167,12 +167,16 @@ Nodo* Lista::Ricerca(int x) {
 	}
 }
 
-void Lista::Inverti(){
-	Nodo *q, *p, *r = 0;
-	while (q != 0){
-		q=q->getPunt();
-		p->setPunt(r);
-		r = p;
+void Lista::Inverti() {
+	Nodo *succ = L;
+	Nodo *prec = 0;
+	Nodo *tmp = NULL;
+	while (succ != 0) {
+		tmp = succ->getPunt();
+		succ->setPunt(prec);
+		L = succ;
+		prec = succ;
+		succ = tmp;
 	}
 }
 	
