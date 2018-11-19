@@ -168,13 +168,11 @@ Nodo* Lista::Ricerca(int x) {
 }
 
 void Lista::Inverti(){
-	Nodo *q, *p, *r = 0
+	Nodo *q, *p, *r = 0;
 	while (q != 0){
-		
-		->setPunt(r);
-		L = next;
-		prev = next;
-		next = tmp;
+		q=q->getPunt();
+		p->setPunt(r);
+		r = p;
 	}
 }
 	
