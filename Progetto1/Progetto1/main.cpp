@@ -1,14 +1,14 @@
 #include"lista.h"
+#include"lista.cpp"
 #include"Nodo.h"
+#include"Nodo.cpp"
 #include<iostream>
 using namespace std;
-
-int main(){
+int main() {
 	int elemento;
-	int ele2;
 	cout << "Elemento: ";
 	cin >> elemento;
-	Lista miaLista;
+	Lista <int>miaLista;
 	miaLista.InserisciInTesta(elemento);
 	miaLista.Visualizza();
 	cin >> elemento;
@@ -18,7 +18,7 @@ int main(){
 	miaLista.InserisciOrdinato(elemento);
 	cout << endl;
 	miaLista.Visualizza();
-	miaLista.reverseList();
+	miaLista.Inverti();
 	cout << endl;
 	miaLista.Visualizza();
 	cout << endl;
