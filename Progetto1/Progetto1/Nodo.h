@@ -1,18 +1,18 @@
 #pragma once
+template <class tipo>
 class Nodo {
 private:
-	int info;
-	Nodo * punt;
+	tipo info;
+	Nodo<tipo>* punt;
 
 public:
 	Nodo();
-	Nodo(int);
-	int getInfo();
-	void setInfo(int);
-	Nodo* getPunt(); //poichè nodo è un puntatore a nodo
-	void setPunt(Nodo*);
+	Nodo(tipo);
+	tipo getInfo();
+	void setInfo(tipo);
+	Nodo<tipo>* getPunt();
+	void setPunt(Nodo<tipo>*);
 	~Nodo();
 };
-
 
 
