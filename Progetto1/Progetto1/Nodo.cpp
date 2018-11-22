@@ -1,28 +1,34 @@
-#include"Nodo.h"
-Nodo::Nodo() {
-	punt = 0; //ora è il primo
+#include "Nodo.h"
+template <class tipo>
+Nodo<tipo>::Nodo() {
 }
 
-Nodo::Nodo(int x) {
+template <class tipo>
+Nodo<tipo>::Nodo(tipo x) {
 	punt = 0;
 	info = x;
 }
 
-int Nodo::getInfo() {
+template <class tipo>
+tipo Nodo<tipo>::getInfo() {
 	return info;
 }
 
-void Nodo::setInfo(int x) {
+template <class tipo>
+void Nodo<tipo>::setInfo(tipo x) {
 	info = x;
 }
 
-Nodo* Nodo::getPunt() {
+template <class tipo>
+Nodo<tipo>* Nodo<tipo>::getPunt() {
 	return punt;
 }
 
-void Nodo::setPunt(Nodo* P) {
+template <class tipo>
+void Nodo<tipo>::setPunt(Nodo<tipo>* P) {
 	punt = P;
 }
 
-Nodo::~Nodo() {
+template <class tipo>
+Nodo<tipo>::~Nodo() {
 }
