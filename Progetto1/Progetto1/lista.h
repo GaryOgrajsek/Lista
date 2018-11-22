@@ -1,23 +1,24 @@
 #pragma once
 #include"Nodo.h"
-
+template<class tipo>
 class Lista {
 	//friend Lista operator +(Lista &, Lista &); //mantieni ordine DA FARE
-	friend Lista Merge(const Lista &, const Lista &);
+	friend Lista<tipo> Merge(const Lista &, const Lista &);
 private:
-	Nodo * L;
+	Nodo<tipo> * L;
 public:
 	Lista();
-	void InserisciInTesta(int);
-	void InserisciInCoda(int);
-	void InserisciOrdinato(int); //ordine crescente
-	void Modifica(int, int);
-	Nodo * Ricerca(int); //	ricerca un dato e restituisce il puntatore al nodo precedente quello che contiene il dato cercato
+	void InserisciInTesta(tipo);
+	void InserisciInCoda(tipo);
+	void InserisciOrdinato(tipo); //ordine crescente
+	void Modifica(tipo, tipo);
+	Nodo<tipo> * Ricerca(tipo); //	ricerca un dato e restituisce il puntatore al nodo precedente quello che contiene il dato cercato
 	void Visualizza();
 	void VisualizzaNonOrdinato();
-	bool Controlla(Nodo*);
-	void Elimina(int);
+	bool Controlla(Nodo<tipo>*);
+	void Elimina(tipo);
 	void EliminaTesta();
 	void Inverti();
 	~Lista();
 };
+
