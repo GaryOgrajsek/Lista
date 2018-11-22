@@ -7,11 +7,11 @@ using namespace std;
 }*/
 
 //implementare stack con i puntatori e lista
-
-Lista Merge(const Lista & uno, const Lista & due) {
+template <class tipo>
+Lista<tipo> Merge(const Lista<tipo> & uno, const Lista<tipo> & due) {
 	Lista tre;
-	Nodo *p1 = uno.L;
-	Nodo *p2 = due.L;
+	Nodo<tipo> *p1 = uno.L;
+	Nodo<tipo> *p2 = due.L;
 	while (p1->getPunt() != 0 && p2->getPunt() != 0) {
 		if (p1->getInfo() >= p2->getInfo()) {
 			tre.InserisciInCoda(p2->getInfo());
@@ -32,20 +32,23 @@ Lista Merge(const Lista & uno, const Lista & due) {
 	}
 	return tre;
 }
-	
-Lista::Lista() {
+
+template <class tipo>
+Lista<tipo>::Lista() {
 	L = 0; //se la lista è nuova, L non punta a niente.
 }
 
-void Lista::InserisciInTesta(int x) {
-	Nodo *P = new Nodo(x); //parte costruttore nodo che mette 0 a punt e x a info
+template <class tipo>
+void Lista<tipo>::InserisciInTesta(tipo x) {
+	Nodo<tipo> *P = new Nodo<tipo>(x); //parte costruttore nodo che mette 0 a punt e x a info
 	P->setPunt(L);
 	L = P;
 }
 
-void Lista::InserisciInCoda(int x) {
-	Nodo *p = L;
-	Nodo *temp = new Nodo(x);
+template <class tipo>
+void Lista<tipo>::InserisciInCoda(tipo x) {
+	Nodo<tipo> *p = L;
+	Nodo<tipo> *temp = new Nodo<tipo>(x);
 
 	if (L != 0) {
 		while (p->getPunt() != 0){
@@ -59,15 +62,16 @@ void Lista::InserisciInCoda(int x) {
 		L = temp;
 }
 
-void Lista::InserisciOrdinato(int x) {
-	Nodo *p = new Nodo(x);
+template <class tipo>
+void Lista<tipo>::InserisciOrdinato(tipo x) {
+	Nodo<tipo> *p = new Nodo<tipo>(x);
 
 	if (L == 0 || x < L->getInfo()) {
 		p->setPunt(L);
 		L = p;
 	}
 	else {
-		Nodo *prec, *succ;
+		Nodo<tipo> *prec, *succ;
 		succ = L;
 		prec = 0;
 		while (x > succ->getInfo() && succ->getPunt() != 0) {
@@ -84,32 +88,36 @@ void Lista::InserisciOrdinato(int x) {
 	}
 }
 
-void Lista::Visualizza() {
-	Nodo *P = L;
+template <class tipo>
+void Lista<tipo>::Visualizza() {
+	Nodo<tipo> *P = L;
 	while (P != 0) { //così sennò non visualizza l'ultimo. E supera l'ultimo.
 		cout << P->getInfo();
 		P = P->getPunt();
 	}
 }
 
-void Lista::VisualizzaNonOrdinato(){
-	Nodo *p=L;
+template <class tipo>
+void Lista<tipo>::VisualizzaNonOrdinato(){
+	Nodo<tipo> *p=L;
 	while(Controlla(p)){
 		cout<<p->getInfo();
 		p = p->getPunt();
 	}
 }
 
-bool Lista::Controlla(Nodo* q){
-	Nodo* p=L;
+template <class tipo>
+bool Lista<tipo>::Controlla(Nodo<tipo>* q){
+	Nodo<tipo>* p=L;
 	while(p != q && p!=q->getPunt()){
 		p=p->getPunt();
 	}
 	return (p!=q->getPunt());
 }
 
-void Lista::Elimina(int x) {
-	Nodo *succ, *prec;
+template <class tipo>
+void Lista<tipo>::Elimina(tipo x) {
+	Nodo<tipo> *succ, *prec;
 	succ = L;
 	prec = NULL;
 	while (succ != 0 && succ->getInfo() != x) {
@@ -127,16 +135,18 @@ void Lista::Elimina(int x) {
 	}
 }
 
-void Lista::EliminaTesta() {
-	Nodo *P = L;
+template <class tipo>
+void Lista<tipo>::EliminaTesta() {
+	Nodo<tipo> *P = L;
 	if (P->getPunt() != 0) {
 		L = P->getPunt();
 		delete P;
 	}
 }
 
-void Lista::Modifica(int prima, int dopo) {
-	Nodo *p;
+template <class tipo>
+void Lista<tipo>::Modifica(tipo prima, tipo dopo) {
+	Nodo<tipo> *p;
 	p = L;
 	if (L != 0) {	
 		while (p != 0){
@@ -151,8 +161,9 @@ void Lista::Modifica(int prima, int dopo) {
 	}
 }
 
-Nodo* Lista::Ricerca(int x) {
-	Nodo *succ, *prec;
+template <class tipo>
+Nodo<tipo>* Lista<tipo>::Ricerca(tipo x) {
+	Nodo<tipo> *succ, *prec;
 	succ = L;
 	prec = NULL;
 	if (L == 0) {
@@ -167,10 +178,11 @@ Nodo* Lista::Ricerca(int x) {
 	}
 }
 
-void Lista::Inverti() {
-	Nodo *succ = L;
-	Nodo *prec = 0;
-	Nodo *tmp = NULL;
+template <class tipo>
+void Lista<tipo>::Inverti() {
+	Nodo<tipo> *succ = L;
+	Nodo<tipo> *prec = 0;
+	Nodo<tipo> *tmp = NULL;
 	while (succ != 0) {
 		tmp = succ->getPunt();
 		succ->setPunt(prec);
@@ -179,6 +191,8 @@ void Lista::Inverti() {
 		succ = tmp;
 	}
 }
-	
-Lista::~Lista() {
+
+template <class tipo>
+Lista<tipo>::~Lista() {
 }
+
