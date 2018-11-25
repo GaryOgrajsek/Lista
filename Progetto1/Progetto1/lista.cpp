@@ -193,6 +193,19 @@ void Lista<tipo>::Inverti() {
 }
 
 template <class tipo>
+Lista<tipo> Lista<tipo>::SeparaX(tipo x) {
+	Nodo<tipo>* p = L;
+	Lista<tipo> split;
+	while (p != 0) {
+		if (p->getInfo() == x) {
+			split.InserisciInCoda(x);
+		}
+		p = p->getPunt();
+	}
+	return split;
+}
+
+template <class tipo>
 Lista<tipo>::~Lista() {
 }
 
