@@ -19,6 +19,7 @@ public:
 	void Elimina(tipo);
 	void EliminaTesta();
 	void Inverti();
+	Lista<tipo> SeparaX(tipo);
 	~Lista();
 };
 
