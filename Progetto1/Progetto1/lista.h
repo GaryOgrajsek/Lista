@@ -20,6 +20,7 @@ public:
 	void EliminaTesta();
 	void Inverti();
 	Lista<tipo> SeparaX(tipo);
+	void SeparaPrima(Lista<tipo>);
 	~Lista();
 };
 
