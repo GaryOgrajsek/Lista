@@ -206,6 +206,14 @@ Lista<tipo> Lista<tipo>::SeparaX(tipo x) {
 }
 
 template <class tipo>
+void Lista<tipo>::SeparaPrimo(Lista<tipo> l1) {
+	Nodo<tipo>* p1 = x1.L;
+	Nodo <tipo>* p2 = L;
+	InserisciInTesta(l1.L->getInfo());
+	l1.EliminaTesta();
+}
+
+template <class tipo>
 Lista<tipo>::~Lista() {
 }
 
